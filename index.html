@@ -1,168 +1,327 @@
 <!doctype html>
-<html lang="nl">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
-<title>QuoteFlow – offertes maken als invulbare PDF</title>
-<meta name="description" content="QuoteFlow is een desktop-app voor macOS en Windows om snel offertes te maken en als invulbare PDF te versturen. Download de nieuwste versie.">
+<title>QuoteFlow – Quotes, made simple.</title>
+<meta name="description" content="QuoteFlow is a desktop app for macOS and Windows that turns a customer and a few products into a polished, fillable PDF quote. Free 7-day trial.">
+<meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6 58 20 32 34 6 20z' fill='%23f6b94a'/%3E%3Cpath d='M32 20 58 34 32 48 6 34z' fill='%23f29a2e' opacity='.9'/%3E%3Cpath d='M32 34 58 48 32 62 6 48z' fill='%23e8742a' opacity='.9'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is QuoteFlow?", "acceptedAnswer": {"@type": "Answer", "text": "QuoteFlow is a desktop app for macOS and Windows for making quotes quickly. You pick or add a customer, fill in the products, and the app creates a fillable PDF quote with a barcode and your own branding."}}, {"@type": "Question", "name": "Which computers does it run on?", "acceptedAnswer": {"@type": "Answer", "text": "On Windows 10 and 11 (64-bit) and on macOS, on Macs with an Apple chip (M1 or later) as well as Intel Macs. Choose the right version when you download."}}, {"@type": "Question", "name": "Do I need to be online?", "acceptedAnswer": {"@type": "Answer", "text": "No. Making quotes works offline. You only need internet to check for updates and to open your email if you use Outlook on the web."}}, {"@type": "Question", "name": "Which languages can I make quotes in?", "acceptedAnswer": {"@type": "Answer", "text": "Dutch and English. The standard texts, terms and the email text can be edited per language."}}, {"@type": "Question", "name": "Can I try QuoteFlow first?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every new installation works as a trial for 7 days. After that you need a serial to keep making quotes."}}, {"@type": "Question", "name": "What happens after the trial?", "acceptedAnswer": {"@type": "Answer", "text": "You can no longer make quotes or previews until you enter a serial. Your data and the PDFs you have already made stay saved and accessible."}}, {"@type": "Question", "name": "How do I request and activate a serial?", "acceptedAnswer": {"@type": "Answer", "text": "In the app open Settings → Licence and copy the Installation ID. Include it with your request. You receive a serial, which you paste into the same screen and activate."}}, {"@type": "Question", "name": "Can I use one serial on several computers?", "acceptedAnswer": {"@type": "Answer", "text": "A serial is issued for one installation and only works on that computer. For another computer, request a new serial with that computer's Installation ID."}}, {"@type": "Question", "name": "Where is my customer data stored?", "acceptedAnswer": {"@type": "Answer", "text": "Only on your own computer, in one encrypted file (QuoteFlow.qf) in your quotes folder. There is no account and no cloud. The app does not send customer data to the internet; for updates it only asks GitHub whether a newer version exists."}}, {"@type": "Question", "name": "I forgot my password. Now what?", "acceptedAnswer": {"@type": "Answer", "text": "When you set your password you see a recovery key once. With that key you set a new password on the sign-in screen via Forgot password?. Without both the password and the recovery key the customer data cannot be recovered, so keep the key somewhere safe, away from your computer."}}, {"@type": "Question", "name": "Are the PDFs encrypted too?", "acceptedAnswer": {"@type": "Answer", "text": "No. Quote PDFs have to be sent and opened, so they are stored normally in the quote's folder. Turn on disk encryption on your computer (FileVault on Mac, BitLocker on Windows)."}}, {"@type": "Question", "name": "Why does my computer show a warning when installing?", "acceptedAnswer": {"@type": "Answer", "text": "QuoteFlow is not signed by Apple or Microsoft, so macOS and Windows show a warning the first time. Only download the app from this page or from the releases page, and follow the installation steps above."}}, {"@type": "Question", "name": "How do I send a quote?", "acceptedAnswer": {"@type": "Answer", "text": "After creating it you can open the email with recipient, subject and text filled in, through Outlook on the web or your default mail app. You add the PDF yourself by dragging it from the opened folder into the email."}}, {"@type": "Question", "name": "Can I use my own logo, colours and texts?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. QuoteFlow ships blank. Under Settings → Profile and template you set your branding (colours, background, logo, logo strip) and edit all texts. You can export this as a profile and import it on another installation, without customer data."}}, {"@type": "Question", "name": "How does quote numbering work?", "acceptedAnswer": {"@type": "Answer", "text": "A quote number consists of a prefix you set, a location code and a sequence number. The sequence number counts up automatically. On a new computer it continues from the highest number found in your quotes folder."}}, {"@type": "Question", "name": "What is the Reclameland plug-in?", "acceptedAnswer": {"@type": "Answer", "text": "An optional browser button that puts a product you configured on reclameland.nl into your quote with one click. It is off by default and you do not have to install it."}}, {"@type": "Question", "name": "How do I move to a new computer?", "acceptedAnswer": {"@type": "Answer", "text": "Install QuoteFlow, choose Other folder… on the start screen and select your old quotes folder. After entering your password your customers, settings and quotes are back. Request a new serial for the new computer if your serial is bound to the old installation."}}, {"@type": "Question", "name": "How do I update to a new version?", "acceptedAnswer": {"@type": "Answer", "text": "The app tells you when a new version is available (you can also check manually under Settings → Updates). On Windows the installer starts; on a Mac you drag the new app to Applications and choose Replace. Your data is kept."}}]}</script>
 <style>
-:root{--bg:#f6f7fa;--card:#fff;--ink:#000830;--muted:#5d6477;--line:#d9dce6;--acc:#e8742a;--acc-ink:#fff;--soft:#fdf0e6}
-@media (prefers-color-scheme:dark){:root{--bg:#10121a;--card:#181b27;--ink:#eef0f8;--muted:#9aa1b8;--line:#2f3447;--acc:#f08a40;--acc-ink:#1a1206;--soft:#2a2118}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.wrap{max-width:900px;margin:0 auto;padding:0 20px}
-header{padding:48px 0 8px}
-.merk{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px}
-.merk svg{width:36px;height:36px}
-h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:24px 0 12px}
-.lead{font-size:18px;color:var(--muted);max-width:640px;margin:0 0 24px}
-.knop{display:inline-block;background:var(--acc);color:var(--acc-ink);border-radius:12px;padding:13px 22px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:16px}
-.knop:hover{filter:brightness(1.07)}.knop.sec{background:transparent;color:var(--ink);border:1px solid var(--line)}
-.knop:focus-visible,a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
-.sub{color:var(--muted);font-size:14px;margin:10px 0 0}
-section{margin:44px 0}
-h3{font-size:17px;margin:26px 0 8px;color:var(--muted);font-weight:600}
-details p{margin:10px 0 4px}
-h2{font-size:24px;margin:0 0 14px}
-.kaarten{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.kaart{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
-.kaart.uit{border-color:var(--acc);box-shadow:0 0 0 2px var(--soft)}
-.kaart h3{margin:0 0 4px;font-size:17px}.kaart p{margin:0 0 12px;color:var(--muted);font-size:14px}
-ul.lijst{padding-left:20px;margin:0}ul.lijst li{margin:6px 0}
-ol.stappen{padding-left:22px}ol.stappen li{margin:8px 0}
-.melding{background:var(--soft);border-left:4px solid var(--acc);border-radius:8px;padding:12px 16px;margin:16px 0}
-details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0}
-summary{cursor:pointer;font-weight:600}
-code{background:var(--soft);border-radius:4px;padding:1px 6px;font-size:14px}
-pre#nieuw{white-space:pre-wrap;font:inherit;margin:0;color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:14px}
-a{color:inherit}
+:root{--bg:#fff;--alt:#f5f5f7;--ink:#1d1d1f;--mut:#6e6e73;--link:#0066cc;--btn:#0071e3;--btn-h:#0077ed;--btn-ink:#fff;--line:#d2d2d7;--card:#fff;--nav:rgba(255,255,255,.8);--shadow:0 30px 60px -20px rgba(0,0,0,.28)}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--alt:#161617;--ink:#f5f5f7;--mut:#a1a1a6;--link:#2997ff;--btn:#0071e3;--btn-h:#147ce5;--line:#424245;--card:#1d1d1f;--nav:rgba(22,22,23,.8);--shadow:0 30px 60px -20px rgba(0,0,0,.8)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:56px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.47 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:-.022em;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:600;margin:0}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
+.w{max-width:980px;margin:0 auto;padding:0 22px}
+/* navigatie */
+nav{position:sticky;top:0;z-index:20;background:var(--nav);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(128,128,128,.22)}
+nav .w{display:flex;align-items:center;height:48px;gap:26px;max-width:1024px}
+.merk{font-weight:600;font-size:16px;color:var(--ink);display:flex;align-items:center;gap:8px;margin-right:auto}.merk:hover{text-decoration:none}
+.merk svg{width:20px;height:20px}
+nav .links a{font-size:12px;color:var(--ink);opacity:.8;letter-spacing:-.01em}nav .links a:hover{opacity:1;text-decoration:none}
+nav .links{display:flex;gap:26px}
+.taal{display:flex;border:1px solid var(--line);border-radius:980px;overflow:hidden;font-size:12px}
+.taal button{background:none;border:0;color:var(--ink);padding:3px 10px;cursor:pointer;font:inherit;opacity:.65}
+.taal button[aria-pressed=true]{background:var(--ink);color:var(--bg);opacity:1}
+.knop{display:inline-block;background:var(--btn);color:var(--btn-ink);border-radius:980px;padding:12px 22px;font-size:17px;line-height:1.18;text-decoration:none!important;border:0;cursor:pointer}
+.knop:hover{background:var(--btn-h)}.knop.klein{padding:4px 12px;font-size:12px}
+.chev::after{content:" ›";font-size:1.1em}
+/* hero */
+.hero{text-align:center;padding:64px 0 0;overflow:hidden}
+.eyebrow{font-size:21px;font-weight:600;color:#bf4800;margin:0 0 6px}
+@media (prefers-color-scheme:dark){.eyebrow{color:#ff9f0a}}
+.hero h1{font-size:clamp(40px,8vw,80px);line-height:1.05;letter-spacing:-.03em;margin:0 auto 14px;max-width:820px}
+.hero .sub{font-size:clamp(19px,2.6vw,28px);line-height:1.2;color:var(--ink);margin:0 auto 26px;max-width:720px;font-weight:400;letter-spacing:-.015em}
+.cta{display:flex;gap:22px;justify-content:center;align-items:center;flex-wrap:wrap}
+.cta .l{font-size:21px}
+.versie{font-size:14px;color:var(--mut);margin:16px 0 0;min-height:1.5em}
+/* illustratief venster (geen echte schermafbeelding) */
+.stage{margin:48px auto 0;max-width:900px;padding:0 22px;perspective:1600px}
+.venster{background:var(--card);border-radius:14px 14px 0 0;box-shadow:var(--shadow);border:1px solid rgba(128,128,128,.25);border-bottom:0;transform:rotateX(6deg);transform-origin:50% 100%;animation:zweef 7s ease-in-out infinite}
+@keyframes zweef{50%{transform:rotateX(3deg) translateY(-6px)}}
+.balk{display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line);background:var(--alt);border-radius:14px 14px 0 0}
+.balk i{width:12px;height:12px;border-radius:50%;display:block}.balk i:nth-child(1){background:#ff5f57}.balk i:nth-child(2){background:#febc2e}.balk i:nth-child(3){background:#28c840}
+.balk span{margin:0 auto;font-size:12px;color:var(--mut);transform:translateX(-24px)}
+.inhoud{display:grid;grid-template-columns:200px 1fr;min-height:360px}
+.zij{background:var(--alt);border-right:1px solid var(--line);padding:18px 14px;display:flex;flex-direction:column;gap:10px;text-align:left}
+.zij b{height:30px;border-radius:8px;background:rgba(128,128,128,.14);display:block}.zij b.act{background:var(--btn);opacity:.9}
+.blad{padding:30px 34px;text-align:left}
+.bc{height:44px;width:200px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 5px,var(--ink) 5px 6px,transparent 6px 9px,var(--ink) 9px 12px,transparent 12px 14px);opacity:.85;border-radius:2px}
+.blad h4{font:600 30px/1.1 inherit;margin:16px 0 18px;letter-spacing:-.02em}
+.ln{height:9px;border-radius:5px;background:rgba(128,128,128,.22);margin:9px 0}.ln.k{width:48%}.ln.m{width:72%}.ln.g{width:90%}
+.rij{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-weight:600;font-size:15px}
+.rij em{font-style:normal;background:var(--btn);color:#fff;border-radius:8px;padding:5px 12px;font-size:14px}
+/* secties */
+section{padding:96px 0}section.alt{background:var(--alt)}
+.kop{text-align:center;margin-bottom:52px}
+.kop h2{font-size:clamp(32px,5.6vw,56px);line-height:1.07;letter-spacing:-.03em;margin-bottom:12px}
+.kop p{font-size:clamp(19px,2.4vw,24px);line-height:1.25;color:var(--mut);max-width:720px;margin:0 auto;letter-spacing:-.01em}
+.groot{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.paneel{background:var(--alt);border-radius:28px;padding:44px 36px;min-height:340px;display:flex;flex-direction:column;justify-content:space-between}
+section.alt .paneel{background:var(--card)}
+.paneel h3{font-size:clamp(24px,3.4vw,34px);line-height:1.1;letter-spacing:-.025em;margin-bottom:12px}
+.paneel p{color:var(--mut);font-size:17px;margin:0}
+.paneel .ico{color:var(--btn);margin-bottom:22px}.paneel .ico svg{width:48px;height:48px}
+.tegels{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.tegel{background:var(--card);border-radius:24px;padding:30px 28px}
+.tegel .ico{color:var(--btn);margin-bottom:14px}.tegel h3{font-size:21px;letter-spacing:-.02em;margin-bottom:6px}.tegel p{margin:0;color:var(--mut);font-size:16px;line-height:1.4}
+/* downloads */
+.dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.dk{background:var(--card);border-radius:24px;padding:32px 28px;text-align:center;border:2px solid transparent;display:flex;flex-direction:column;align-items:center;gap:6px}
+.dk.uit{border-color:var(--btn)}.dk h3{font-size:24px;letter-spacing:-.02em}.dk p{margin:0 0 14px;color:var(--mut);font-size:15px}.dk .knop{margin-top:auto}
+.noot{max-width:720px;margin:28px auto 0;text-align:center;color:var(--mut);font-size:15px}
+.proef{max-width:720px;margin:36px auto 0;background:var(--card);border-radius:20px;padding:20px 26px;text-align:center;font-size:17px}
+/* stappen en faq */
+.acc{max-width:780px;margin:0 auto 8px}
+details{border-bottom:1px solid var(--line);padding:0}details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:18px 40px 18px 0;font-size:19px;font-weight:600;letter-spacing:-.015em;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:9px;height:9px;border-right:2px solid var(--mut);border-bottom:2px solid var(--mut);transform:translateY(-70%) rotate(45deg);transition:transform .25s}
+details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+details p,details ol{margin:0 0 20px;color:var(--mut);font-size:17px}details ol{padding-left:22px}details li{margin:8px 0}
+code{background:rgba(128,128,128,.16);border-radius:5px;padding:1px 6px;font-size:.9em}
+#faq h3,#install h3{max-width:780px;margin:44px auto 10px;font-size:15px;color:var(--mut);font-weight:600;text-transform:none}
 .verberg{display:none}
+pre#nieuw{white-space:pre-wrap;font:inherit;margin:0;color:var(--mut);max-width:720px;margin:0 auto}
+footer{background:var(--alt);color:var(--mut);font-size:12px;padding:20px 0 34px;line-height:1.5}
+footer .w{max-width:1024px}footer hr{border:0;border-top:1px solid var(--line);margin:14px 0}footer a{color:var(--mut)}
+/* animaties */
+.r{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}.r.zicht{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none}.venster{animation:none;transform:none}html{scroll-behavior:auto}}
+@media (max-width:734px){
+ nav .links{display:none}nav .w{gap:12px}.groot{grid-template-columns:1fr}.paneel{padding:32px 26px;min-height:0}
+ .inhoud{grid-template-columns:1fr}.zij{display:none}.blad{padding:22px}section{padding:64px 0}.cta .l{font-size:19px}
+}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wat is QuoteFlow?", "acceptedAnswer": {"@type": "Answer", "text": "QuoteFlow is een desktop-app voor macOS en Windows waarmee je snel offertes maakt. Je kiest of voegt een klant toe, vult de producten in en de app maakt een offerte als invulbare PDF met barcode en je eigen huisstijl."}}, {"@type": "Question", "name": "Op welke computers werkt het?", "acceptedAnswer": {"@type": "Answer", "text": "Op Windows 10 en 11 (64-bit) en op macOS, zowel op Macs met een Apple-chip (M1 of nieuwer) als op Macs met een Intel-processor. Kies bij het downloaden de juiste versie."}}, {"@type": "Question", "name": "Moet ik online zijn om te werken?", "acceptedAnswer": {"@type": "Answer", "text": "Nee. Offertes maken werkt gewoon offline. Internet is alleen nodig om te zoeken naar updates en om de e-mail te openen als je Outlook op het web gebruikt."}}, {"@type": "Question", "name": "In welke talen kan ik offertes maken?", "acceptedAnswer": {"@type": "Answer", "text": "In het Nederlands en in het Engels. De standaardteksten, de voorwaarden en de e-mailtekst kun je per taal zelf aanpassen."}}, {"@type": "Question", "name": "Kan ik QuoteFlow eerst proberen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Elke nieuwe installatie werkt 7 dagen als proefversie. Daarna heb je een serial nodig om offertes te blijven maken."}}, {"@type": "Question", "name": "Wat gebeurt er na de proefperiode?", "acceptedAnswer": {"@type": "Answer", "text": "Je kunt dan geen offertes of voorbeelden meer maken totdat je een serial invoert. Je gegevens en de PDF's die je al hebt gemaakt blijven gewoon bewaard en bereikbaar."}}, {"@type": "Question", "name": "Hoe vraag ik een serial aan en activeer ik die?", "acceptedAnswer": {"@type": "Answer", "text": "Open in de app Instellingen → Licentie en kopieer het Installatie-ID. Geef dat ID door bij je aanvraag. Je ontvangt een serial, die je in hetzelfde scherm plakt en activeert."}}, {"@type": "Question", "name": "Mag ik een serial op meerdere computers gebruiken?", "acceptedAnswer": {"@type": "Answer", "text": "Een serial wordt voor één installatie uitgegeven en werkt dan alleen op die computer. Voor een andere computer vraag je een nieuwe serial aan met het Installatie-ID van die computer."}}, {"@type": "Question", "name": "Waar staan mijn klantgegevens?", "acceptedAnswer": {"@type": "Answer", "text": "Alleen op je eigen computer, in één versleuteld bestand (QuoteFlow.qf) in je offertemap. Er is geen account en geen cloud. De app stuurt geen klantgegevens naar internet. Voor updates vraagt hij alleen bij GitHub of er een nieuwere versie is."}}, {"@type": "Question", "name": "Ik ben mijn wachtwoord vergeten. Wat nu?", "acceptedAnswer": {"@type": "Answer", "text": "Bij het instellen van je wachtwoord krijg je één keer een herstelsleutel te zien. Met die sleutel stel je op het inlogscherm een nieuw wachtwoord in via Wachtwoord vergeten?. Zonder wachtwoord én herstelsleutel zijn de klantgegevens niet te herstellen. Bewaar de sleutel daarom veilig, buiten je computer."}}, {"@type": "Question", "name": "Zijn de PDF's ook versleuteld?", "acceptedAnswer": {"@type": "Answer", "text": "Nee. De offerte-PDF's moet je kunnen versturen en openen, dus die staan gewoon in de map van de offerte. Zet daarom schijfversleuteling aan op je computer (FileVault op de Mac, BitLocker op Windows)."}}, {"@type": "Question", "name": "Waarom waarschuwt mijn computer bij het installeren?", "acceptedAnswer": {"@type": "Answer", "text": "QuoteFlow is niet ondertekend door Apple of Microsoft, daarom tonen macOS en Windows bij het eerste gebruik een waarschuwing. Download de app alleen van deze pagina of van de releases-pagina en volg de installatiestappen hierboven."}}, {"@type": "Question", "name": "Hoe verstuur ik een offerte?", "acceptedAnswer": {"@type": "Answer", "text": "Na het maken kun je de e-mail openen met ontvanger, onderwerp en tekst alvast ingevuld. Dat kan via Outlook op het web of via je standaard e-mailprogramma. De PDF voeg je zelf toe door hem uit de geopende map in de e-mail te slepen."}}, {"@type": "Question", "name": "Kan ik mijn eigen logo, kleuren en teksten gebruiken?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. QuoteFlow wordt blanco geleverd. Onder Instellingen → Profiel en sjabloon stel je je huisstijl in (kleuren, achtergrond, logo, logostrook) en pas je alle teksten aan. Je kunt dit als profiel exporteren en op een andere installatie importeren, zonder klantgegevens."}}, {"@type": "Question", "name": "Hoe werkt de nummering van offertes?", "acceptedAnswer": {"@type": "Answer", "text": "Het offertenummer bestaat uit een prefix die je zelf instelt, een locatiecode en een volgnummer. Het volgnummer telt automatisch door. Op een nieuwe computer gaat het verder bij het hoogste nummer dat in je offertemap staat."}}, {"@type": "Question", "name": "Wat is de Reclameland-plug-in?", "acceptedAnswer": {"@type": "Answer", "text": "Een optionele knop voor je browser waarmee je een product dat je op reclameland.nl hebt samengesteld met één klik in je offerte zet. De plug-in staat standaard uit en je hoeft hem niet te installeren."}}, {"@type": "Question", "name": "Hoe verhuis ik naar een nieuwe computer?", "acceptedAnswer": {"@type": "Answer", "text": "Installeer QuoteFlow, kies op het startscherm Andere map… en wijs je oude offertemap aan. Na het invoeren van je wachtwoord zijn je klanten, instellingen en offertes er weer. Vraag voor de nieuwe computer een nieuwe serial aan als je serial aan de oude installatie is gebonden."}}, {"@type": "Question", "name": "Hoe update ik naar een nieuwe versie?", "acceptedAnswer": {"@type": "Answer", "text": "De app meldt zelf dat er een nieuwe versie is (je kunt ook handmatig controleren onder Instellingen → Updates). Op Windows start de installer, op de Mac sleep je de nieuwe app naar Programma's en kies je Vervang. Je gegevens blijven behouden."}}]}</script>
 </head>
-<body>
-<div class="wrap">
-<header>
-  <div class="merk"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 58 20 32 34 6 20z" fill="#f6b94a"/><path d="M32 20 58 34 32 48 6 34z" fill="#f29a2e" opacity=".9"/><path d="M32 34 58 48 32 62 6 48z" fill="#e8742a" opacity=".9"/></svg>QuoteFlow</div>
-  <h1>Offertes maken als invulbare PDF, snel en overzichtelijk</h1>
-  <p class="lead">Een desktop-app voor macOS en Windows. Vul de klant en de producten in, QuoteFlow maakt de offerte met barcode en huisstijl als invulbare PDF.</p>
-  <a class="knop" id="hoofdknop" href="https://github.com/AchimPieters/QuoteFlow-releases/releases/latest">Download QuoteFlow</a> <a class="knop sec" href="#faq">Veelgestelde vragen</a>
-  <p class="sub" id="versie">Nieuwste versie ophalen…</p>
+<body id="top">
+<nav aria-label="Main">
+  <div class="w">
+    <a class="merk" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 58 20 32 34 6 20z" fill="#f6b94a"/><path d="M32 20 58 34 32 48 6 34z" fill="#f29a2e" opacity=".9"/><path d="M32 34 58 48 32 62 6 48z" fill="#e8742a" opacity=".9"/></svg>QuoteFlow</a>
+    <div class="links">
+      <a href="#features"><span data-nl="Functies">Features</span></a>
+      <a href="#download"><span data-nl="Downloaden">Download</span></a>
+      <a href="#install"><span data-nl="Installeren">Install</span></a>
+      <a href="#faq"><span data-nl="Vragen">FAQ</span></a>
+    </div>
+    <div class="taal" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="nl" aria-pressed="false">NL</button></div>
+    <a class="knop klein" href="#download"><span data-nl="Download">Download</span></a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="w">
+    <p class="eyebrow r">QuoteFlow</p>
+    <h1 class="r"><span data-nl="Offertes, eenvoudig gemaakt.">Quotes, made simple.</span></h1>
+    <p class="sub r"><span data-nl="Maak van een klant en een paar producten een verzorgde, invulbare PDF-offerte. Op je Mac of pc.">Turn a customer and a few products into a polished, fillable PDF quote. On your Mac or PC.</span></p>
+    <div class="cta r">
+      <a class="knop" id="hoofdknop" href="https://github.com/AchimPieters/QuoteFlow-releases/releases/latest"><span data-nl="Downloaden">Download</span></a>
+      <a class="l chev" href="#features"><span data-nl="Meer informatie">Learn more</span></a>
+    </div>
+    <p class="versie" id="versie" aria-live="polite"></p>
+  </div>
+  <div class="stage r" aria-hidden="true">
+    <div class="venster">
+      <div class="balk"><i></i><i></i><i></i><span>QuoteFlow</span></div>
+      <div class="inhoud">
+        <div class="zij"><b class="act"></b><b></b><b></b><b></b></div>
+        <div class="blad"><div class="bc"></div><h4>Quotation</h4><div class="ln g"></div><div class="ln m"></div><div class="ln k"></div><div class="ln g"></div><div class="ln m"></div>
+          <div class="rij"><span>Price</span><em>€ 0.00</em></div></div>
+      </div>
+    </div>
+  </div>
 </header>
 
-<section id="downloads">
-  <h2>Downloaden</h2>
-  <div class="kaarten">
-    <div class="kaart" id="k-win"><h3>Windows</h3><p>Windows 10 en 11 (64-bit). <span class="grootte" data-k="win"></span></p><a class="knop" data-k="win" href="https://github.com/AchimPieters/QuoteFlow-releases/releases/latest">Windows-installer</a></div>
-    <div class="kaart" id="k-arm"><h3>macOS · Apple Silicon</h3><p>Macs met een M1-chip of nieuwer. <span class="grootte" data-k="arm"></span></p><a class="knop" data-k="arm" href="https://github.com/AchimPieters/QuoteFlow-releases/releases/latest">DMG voor Apple Silicon</a></div>
-    <div class="kaart" id="k-x64"><h3>macOS · Intel</h3><p>Macs met een Intel-processor. <span class="grootte" data-k="x64"></span></p><a class="knop" data-k="x64" href="https://github.com/AchimPieters/QuoteFlow-releases/releases/latest">DMG voor Intel</a></div>
+<section id="features">
+  <div class="w">
+    <div class="kop r"><h2><span data-nl="Alles wat een offerte nodig heeft.">Everything a quote needs.</span></h2><p><span data-nl="Snel gemaakt. Makkelijk verstuurd. Helemaal in jouw huisstijl.">Fast to make. Easy to send. Yours to brand.</span></p></div>
+    <div class="groot">
+      <div class="paneel r"><div><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>
+        <h3><span data-nl="Invulbaar, vanzelfsprekend.">Fillable by design.</span></h3></div>
+        <p><span data-nl="Elke offerte is een PDF met barcode, handtekeningveld en velden voor naam, functie en datum. Je klant vult het in, tekent en stuurt het terug.">Every quote is a PDF with a barcode, a signature field and fields for name, job title and date. Your customer fills it in, signs and sends it back.</span></p></div>
+      <div class="paneel r"><div><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+        <h3><span data-nl="Van klant naar offerte in minuten.">From customer to quote in minutes.</span></h3></div>
+        <p><span data-nl="Sla klanten op, voeg zoveel producten toe als je wilt, stel per product een marge in en laat de nummering vanzelf doortellen.">Save customers, add as many products as you need, set a margin per product and let the numbering count up for you.</span></p></div>
+      <div class="paneel r"><div><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-.7-1.6-.7-2.5S14 15 15 15h2a4 4 0 0 0 4-4c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7" r="1"/></svg></div>
+        <h3><span data-nl="Jouw huisstijl, jouw teksten.">Your brand, your words.</span></h3></div>
+        <p><span data-nl="QuoteFlow begint blanco. Voeg je kleuren, achtergrond, logo en teksten toe en exporteer alles als profiel voor een andere computer, zonder klantgegevens.">QuoteFlow starts blank. Add your colours, background, logo and texts, then export it all as a profile to use on any other computer, with no customer data inside.</span></p></div>
+      <div class="paneel r"><div><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3><span data-nl="Privé, vanaf het ontwerp.">Private by design.</span></h3></div>
+        <p><span data-nl="Klantgegevens staan in een versleuteld bestand op je eigen computer. Geen account, geen cloud. Met een herstelsleutel is een vergeten wachtwoord geen ramp.">Customer data lives in an encrypted file on your computer. No account, no cloud. A recovery key means a forgotten password is not the end of the world.</span></p></div>
+    </div>
   </div>
-  <p class="sub">Weet je niet welke Mac je hebt? Kies in het Apple-menu <i>Over deze Mac</i>: bij "Chip" staat Apple M…, of bij "Processor" staat Intel.</p>
-  <div class="melding"><b>7 dagen gratis proberen.</b> Na de proefperiode heb je een serial nodig. Je vindt het Installatie-ID in de app onder <i>Instellingen → Licentie</i>.</div>
 </section>
 
-<section>
-  <h2>Wat kan het?</h2>
-  <ul class="lijst">
-    <li>Klanten opslaan en hergebruiken, offertenummers met eigen prefix en locatiecodes die automatisch doortellen.</li>
-    <li>Winstmarge per product, meerdere producten per offerte, bijlagen in een map per offerte.</li>
-    <li>Nederlands en Engels, met standaardteksten die je zelf aanpast.</li>
-    <li>Invulbare PDF met barcode, handtekeningveld en je eigen huisstijl (kleuren, logo, achtergrond).</li>
-    <li>Klantgegevens staan versleuteld op je eigen computer in één bestand, met een herstelsleutel als je het wachtwoord vergeet.</li>
-    <li>Profielen: exporteer je teksten, instellingen en huisstijl en importeer ze op een andere installatie.</li>
-    <li>Optioneel: een knop in je browser om een product van reclameland.nl over te nemen in je offerte.</li>
-  </ul>
+<section class="alt">
+  <div class="w">
+    <div class="kop r"><h2><span data-nl="En nog veel meer.">And so much more.</span></h2></div>
+    <div class="tegels">
+<div class="tegel r"><div class="ico"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><h3><span data-nl="Nederlands en Engels">Dutch and English</span></h3><p data-nl="Maak elke offerte in beide talen, met teksten die je per taal aanpast.">Make every quote in either language, with texts you can edit per language.</p></div>
+<div class="tegel r"><div class="ico"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><h3><span data-nl="Een map per offerte">A folder per quote</span></h3><p data-nl="De PDF en de bestanden die je aan producten hangt komen samen in één map, met de productnaam als bestandsnaam.">The PDF and the files you attach to products end up together, named after the product.</p></div>
+<div class="tegel r"><div class="ico"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></div><h3><span data-nl="Verstuur zoals jij wilt">Send it your way</span></h3><p data-nl="Open een kant-en-klare e-mail in Outlook op het web of in je standaard e-mailprogramma.">Open a ready-to-send email in Outlook on the web or your default mail app.</p></div>
+<div class="tegel r"><div class="ico"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5l2-2v6h-6l2.4-2.4A5.5 5.5 0 1 0 17.5 14"/></svg></div><h3><span data-nl="Verhuizen? Je gaat verder waar je was">Moving? It picks up where you left off</span></h3><p data-nl="Wijs een nieuwe installatie naar je oude map: klanten, instellingen en nummering gaan mee.">Point a new installation to your old folder: customers, settings and numbering come with you.</p></div>
+<div class="tegel r"><div class="ico"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M5 19h14"/></svg></div><h3><span data-nl="Updates in de app">Updates in the app</span></h3><p data-nl="QuoteFlow meldt een nieuwe versie en helpt je met installeren.">QuoteFlow lets you know when a new version is out and installs it for you.</p></div>
+<div class="tegel r"><div class="ico"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3><span data-nl="7 dagen gratis">7 days free</span></h3><p data-nl="Probeer alles een week. Voeg een serial toe als je het wilt houden.">Try everything for a week. Add a serial when you decide to keep it.</p></div>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>Installeren</h2>
-  <details id="d-mac"><summary>macOS</summary>
-    <ol class="stappen">
-      <li>Open de gedownloade <code>.dmg</code> en sleep <b>QuoteFlow</b> naar <b>Programma's</b> (bij een update: kies <i>Vervang</i>).</li>
-      <li>Open QuoteFlow. macOS meldt dat de app niet geopend is: klik op <b>Gereed</b> (niet op "Verplaats naar prullenmand").</li>
-      <li>Ga naar <i>Systeeminstellingen → Privacy en beveiliging</i>, scroll naar <i>Beveiliging</i> en klik naast "QuoteFlow is geblokkeerd" op <b>Open toch</b>. Bevestig met Touch ID of je wachtwoord.</li>
-      <li>Stel bij de eerste start een wachtwoord in (minstens 10 tekens) en bewaar de herstelsleutel veilig.</li>
-    </ol>
-  </details>
-  <details id="d-win"><summary>Windows</summary>
-    <ol class="stappen">
-      <li>Klik met de rechtermuisknop op het gedownloade <code>.exe</code>-bestand, kies <i>Properties</i> en vink onderaan <b>Unblock</b> aan (als die optie er staat). Klik op <i>Apply</i>.</li>
-      <li>Dubbelklik op het bestand. Zie je <i>Windows protected your PC</i>? Klik op <b>More info</b> en dan op <b>Run anyway</b>.</li>
-      <li>Kies in het installatieprogramma <i>Only for me</i> (geen beheerder nodig) of <i>all users</i>, klik op <i>Next</i> en <i>Install</i>.</li>
-      <li>Stel bij de eerste start een wachtwoord in (minstens 10 tekens) en bewaar de herstelsleutel veilig.</li>
-    </ol>
-  </details>
-  <div class="melding"><b>Waarom een waarschuwing?</b> QuoteFlow is niet ondertekend door Apple of Microsoft, daarom waarschuwen macOS en Windows bij het eerste gebruik. Download alleen van deze pagina of van de <a href="https://github.com/AchimPieters/QuoteFlow-releases/releases">releases-pagina</a>.</div>
+<section id="download">
+  <div class="w">
+    <div class="kop r"><h2><span data-nl="Download QuoteFlow.">Download QuoteFlow.</span></h2><p><span data-nl="7 dagen gratis. Voor Windows en Mac.">Free for 7 days. Windows and Mac.</span></p></div>
+    <div class="dl">
+      <div class="dk r" id="k-win"><h3>Windows</h3><p><span data-nl="Windows 10 en 11, 64-bit.">Windows 10 and 11, 64-bit.</span> <span class="grootte" data-k="win"></span></p><a class="knop" data-k="win" href="https://github.com/AchimPieters/QuoteFlow-releases/releases/latest"><span data-nl="Download">Download</span></a></div>
+      <div class="dk r" id="k-arm"><h3>macOS · Apple silicon</h3><p><span data-nl="Macs met een M1-chip of nieuwer.">Macs with an M1 chip or later.</span> <span class="grootte" data-k="arm"></span></p><a class="knop" data-k="arm" href="https://github.com/AchimPieters/QuoteFlow-releases/releases/latest"><span data-nl="Download">Download</span></a></div>
+      <div class="dk r" id="k-x64"><h3>macOS · Intel</h3><p><span data-nl="Macs met een Intel-processor.">Macs with an Intel processor.</span> <span class="grootte" data-k="x64"></span></p><a class="knop" data-k="x64" href="https://github.com/AchimPieters/QuoteFlow-releases/releases/latest"><span data-nl="Download">Download</span></a></div>
+    </div>
+    <p class="noot r"><span data-nl="Weet je niet welke Mac je hebt? Kies in het Apple-menu Over deze Mac: bij Chip staat Apple M…, of bij Processor staat Intel.">Not sure which Mac you have? Choose About This Mac in the Apple menu: the Chip line says Apple M…, or the Processor line says Intel.</span></p>
+    <div class="proef r"><b><span data-nl="Probeer het 7 dagen gratis.">Try it free for 7 days.</span></b> <span data-nl="Daarna heb je een serial nodig. Je vindt je Installatie-ID in de app onder Instellingen → Licentie.">After the trial you need a serial. You find your Installation ID in the app under Settings → Licence.</span></div>
+  </div>
+</section>
+
+<section class="alt" id="install">
+  <div class="w">
+    <div class="kop r"><h2><span data-nl="Binnen enkele minuten geïnstalleerd.">Install in minutes.</span></h2><p><span data-nl="QuoteFlow is niet ondertekend door Apple of Microsoft, daarom vraagt je computer de eerste keer om een korte bevestiging.">QuoteFlow is not signed by Apple or Microsoft, so your computer asks for a quick confirmation the first time.</span></p></div>
+    <div class="acc r">
+      <details id="d-mac"><summary>macOS</summary><ol>
+        <li><span data-nl="Open de gedownloade &lt;code&gt;.dmg&lt;/code&gt; en sleep &lt;b&gt;QuoteFlow&lt;/b&gt; naar &lt;b&gt;Programma&#x27;s&lt;/b&gt; (bij een update: kies &lt;i&gt;Vervang&lt;/i&gt;).">Open the downloaded <code>.dmg</code> and drag <b>QuoteFlow</b> to <b>Applications</b> (when updating, choose <i>Replace</i>).</span></li>
+        <li><span data-nl="Open QuoteFlow. macOS meldt dat de app niet geopend is: klik op &lt;b&gt;Gereed&lt;/b&gt; (niet op “Verplaats naar prullenmand”).">Open QuoteFlow. macOS says it was not opened: click <b>Done</b> (not “Move to Bin”).</span></li>
+        <li><span data-nl="Ga naar &lt;i&gt;Systeeminstellingen → Privacy en beveiliging&lt;/i&gt;, scroll naar &lt;i&gt;Beveiliging&lt;/i&gt; en klik naast “QuoteFlow is geblokkeerd” op &lt;b&gt;Open toch&lt;/b&gt;. Bevestig met Touch ID of je wachtwoord.">Go to <i>System Settings → Privacy &amp; Security</i>, scroll to <i>Security</i> and click <b>Open Anyway</b> next to “QuoteFlow was blocked”. Confirm with Touch ID or your password.</span></li>
+        <li><span data-nl="Stel bij de eerste start een wachtwoord in (minstens 10 tekens) en bewaar de herstelsleutel veilig.">On first launch set a password (at least 10 characters) and keep the recovery key somewhere safe.</span></li>
+      </ol></details>
+      <details id="d-win"><summary>Windows</summary><ol>
+        <li><span data-nl="Klik met de rechtermuisknop op het gedownloade &lt;code&gt;.exe&lt;/code&gt;-bestand, kies &lt;i&gt;Properties&lt;/i&gt; en vink onderaan &lt;b&gt;Unblock&lt;/b&gt; aan (als die optie er staat). Klik op &lt;i&gt;Apply&lt;/i&gt;.">Right-click the downloaded <code>.exe</code>, choose <i>Properties</i> and tick <b>Unblock</b> at the bottom (if shown). Click <i>Apply</i>.</span></li>
+        <li><span data-nl="Dubbelklik op het bestand. Zie je &lt;i&gt;Windows protected your PC&lt;/i&gt;? Klik op &lt;b&gt;More info&lt;/b&gt; en dan op &lt;b&gt;Run anyway&lt;/b&gt;.">Double-click the file. See <i>Windows protected your PC</i>? Click <b>More info</b>, then <b>Run anyway</b>.</span></li>
+        <li><span data-nl="Kies in het installatieprogramma &lt;i&gt;Only for me&lt;/i&gt; (geen beheerder nodig) of &lt;i&gt;all users&lt;/i&gt;, klik op &lt;i&gt;Next&lt;/i&gt; en &lt;i&gt;Install&lt;/i&gt;.">In the installer choose <i>Only for me</i> (no administrator needed) or <i>all users</i>, then <i>Next</i> and <i>Install</i>.</span></li>
+        <li><span data-nl="Stel bij de eerste start een wachtwoord in (minstens 10 tekens) en bewaar de herstelsleutel veilig.">On first launch set a password (at least 10 characters) and keep the recovery key somewhere safe.</span></li>
+      </ol></details>
+    </div>
+  </div>
 </section>
 
 <section id="faq">
-  <h2>Veelgestelde vragen</h2>
-  <h3>Algemeen</h3>
-  <details><summary>Wat is QuoteFlow?</summary><p>QuoteFlow is een desktop-app voor macOS en Windows waarmee je snel offertes maakt. Je kiest of voegt een klant toe, vult de producten in en de app maakt een offerte als invulbare PDF met barcode en je eigen huisstijl.</p></details>
-  <details><summary>Op welke computers werkt het?</summary><p>Op Windows 10 en 11 (64-bit) en op macOS, zowel op Macs met een Apple-chip (M1 of nieuwer) als op Macs met een Intel-processor. Kies bij het downloaden de juiste versie.</p></details>
-  <details><summary>Moet ik online zijn om te werken?</summary><p>Nee. Offertes maken werkt gewoon offline. Internet is alleen nodig om te zoeken naar updates en om de e-mail te openen als je Outlook op het web gebruikt.</p></details>
-  <details><summary>In welke talen kan ik offertes maken?</summary><p>In het Nederlands en in het Engels. De standaardteksten, de voorwaarden en de e-mailtekst kun je per taal zelf aanpassen.</p></details>
-  <h3>Proefversie en serial</h3>
-  <details><summary>Kan ik QuoteFlow eerst proberen?</summary><p>Ja. Elke nieuwe installatie werkt 7 dagen als proefversie. Daarna heb je een serial nodig om offertes te blijven maken.</p></details>
-  <details><summary>Wat gebeurt er na de proefperiode?</summary><p>Je kunt dan geen offertes of voorbeelden meer maken totdat je een serial invoert. Je gegevens en de PDF's die je al hebt gemaakt blijven gewoon bewaard en bereikbaar.</p></details>
-  <details><summary>Hoe vraag ik een serial aan en activeer ik die?</summary><p>Open in de app <i>Instellingen → Licentie</i> en kopieer het <b>Installatie-ID</b>. Geef dat ID door bij je aanvraag. Je ontvangt een serial, die je in hetzelfde scherm plakt en activeert.</p></details>
-  <details><summary>Mag ik een serial op meerdere computers gebruiken?</summary><p>Een serial wordt voor één installatie uitgegeven en werkt dan alleen op die computer. Voor een andere computer vraag je een nieuwe serial aan met het Installatie-ID van die computer.</p></details>
-  <h3>Gegevens en veiligheid</h3>
-  <details><summary>Waar staan mijn klantgegevens?</summary><p>Alleen op je eigen computer, in één versleuteld bestand (<code>QuoteFlow.qf</code>) in je offertemap. Er is geen account en geen cloud. De app stuurt geen klantgegevens naar internet. Voor updates vraagt hij alleen bij GitHub of er een nieuwere versie is.</p></details>
-  <details><summary>Ik ben mijn wachtwoord vergeten. Wat nu?</summary><p>Bij het instellen van je wachtwoord krijg je één keer een herstelsleutel te zien. Met die sleutel stel je op het inlogscherm een nieuw wachtwoord in via <i>Wachtwoord vergeten?</i>. Zonder wachtwoord én herstelsleutel zijn de klantgegevens niet te herstellen. Bewaar de sleutel daarom veilig, buiten je computer.</p></details>
-  <details><summary>Zijn de PDF's ook versleuteld?</summary><p>Nee. De offerte-PDF's moet je kunnen versturen en openen, dus die staan gewoon in de map van de offerte. Zet daarom schijfversleuteling aan op je computer (FileVault op de Mac, BitLocker op Windows).</p></details>
-  <details><summary>Waarom waarschuwt mijn computer bij het installeren?</summary><p>QuoteFlow is niet ondertekend door Apple of Microsoft, daarom tonen macOS en Windows bij het eerste gebruik een waarschuwing. Download de app alleen van deze pagina of van de releases-pagina en volg de installatiestappen hierboven.</p></details>
-  <h3>Gebruik</h3>
-  <details><summary>Hoe verstuur ik een offerte?</summary><p>Na het maken kun je de e-mail openen met ontvanger, onderwerp en tekst alvast ingevuld. Dat kan via Outlook op het web of via je standaard e-mailprogramma. De PDF voeg je zelf toe door hem uit de geopende map in de e-mail te slepen.</p></details>
-  <details><summary>Kan ik mijn eigen logo, kleuren en teksten gebruiken?</summary><p>Ja. QuoteFlow wordt blanco geleverd. Onder <i>Instellingen → Profiel en sjabloon</i> stel je je huisstijl in (kleuren, achtergrond, logo, logostrook) en pas je alle teksten aan. Je kunt dit als profiel exporteren en op een andere installatie importeren, zonder klantgegevens.</p></details>
-  <details><summary>Hoe werkt de nummering van offertes?</summary><p>Het offertenummer bestaat uit een prefix die je zelf instelt, een locatiecode en een volgnummer. Het volgnummer telt automatisch door. Op een nieuwe computer gaat het verder bij het hoogste nummer dat in je offertemap staat.</p></details>
-  <details><summary>Wat is de Reclameland-plug-in?</summary><p>Een optionele knop voor je browser waarmee je een product dat je op reclameland.nl hebt samengesteld met één klik in je offerte zet. De plug-in staat standaard uit en je hoeft hem niet te installeren.</p></details>
-  <h3>Installeren en updaten</h3>
-  <details><summary>Hoe verhuis ik naar een nieuwe computer?</summary><p>Installeer QuoteFlow, kies op het startscherm <i>Andere map…</i> en wijs je oude offertemap aan. Na het invoeren van je wachtwoord zijn je klanten, instellingen en offertes er weer. Vraag voor de nieuwe computer een nieuwe serial aan als je serial aan de oude installatie is gebonden.</p></details>
-  <details><summary>Hoe update ik naar een nieuwe versie?</summary><p>De app meldt zelf dat er een nieuwe versie is (je kunt ook handmatig controleren onder <i>Instellingen → Updates</i>). Op Windows start de installer, op de Mac sleep je de nieuwe app naar Programma's en kies je <i>Vervang</i>. Je gegevens blijven behouden.</p></details>
+  <div class="w">
+    <div class="kop r"><h2><span data-nl="Vragen? Antwoorden.">Questions? Answers.</span></h2></div>
+<h3 class="r"><span data-nl="Algemeen">General</span></h3><div class="acc r">
+<details><summary><span data-nl="Wat is QuoteFlow?">What is QuoteFlow?</span></summary><p data-nl="QuoteFlow is een desktop-app voor macOS en Windows waarmee je snel offertes maakt. Je kiest of voegt een klant toe, vult de producten in en de app maakt een offerte als invulbare PDF met barcode en je eigen huisstijl.">QuoteFlow is a desktop app for macOS and Windows for making quotes quickly. You pick or add a customer, fill in the products, and the app creates a fillable PDF quote with a barcode and your own branding.</p></details>
+<details><summary><span data-nl="Op welke computers werkt het?">Which computers does it run on?</span></summary><p data-nl="Op Windows 10 en 11 (64-bit) en op macOS, zowel op Macs met een Apple-chip (M1 of nieuwer) als op Macs met een Intel-processor. Kies bij het downloaden de juiste versie.">On Windows 10 and 11 (64-bit) and on macOS, on Macs with an Apple chip (M1 or later) as well as Intel Macs. Choose the right version when you download.</p></details>
+<details><summary><span data-nl="Moet ik online zijn om te werken?">Do I need to be online?</span></summary><p data-nl="Nee. Offertes maken werkt gewoon offline. Internet is alleen nodig om te zoeken naar updates en om de e-mail te openen als je Outlook op het web gebruikt.">No. Making quotes works offline. You only need internet to check for updates and to open your email if you use Outlook on the web.</p></details>
+<details><summary><span data-nl="In welke talen kan ik offertes maken?">Which languages can I make quotes in?</span></summary><p data-nl="In het Nederlands en in het Engels. De standaardteksten, de voorwaarden en de e-mailtekst kun je per taal zelf aanpassen.">Dutch and English. The standard texts, terms and the email text can be edited per language.</p></details>
+</div>
+<h3 class="r"><span data-nl="Proefversie en serial">Trial and serial</span></h3><div class="acc r">
+<details><summary><span data-nl="Kan ik QuoteFlow eerst proberen?">Can I try QuoteFlow first?</span></summary><p data-nl="Ja. Elke nieuwe installatie werkt 7 dagen als proefversie. Daarna heb je een serial nodig om offertes te blijven maken.">Yes. Every new installation works as a trial for 7 days. After that you need a serial to keep making quotes.</p></details>
+<details><summary><span data-nl="Wat gebeurt er na de proefperiode?">What happens after the trial?</span></summary><p data-nl="Je kunt dan geen offertes of voorbeelden meer maken totdat je een serial invoert. Je gegevens en de PDF&#x27;s die je al hebt gemaakt blijven gewoon bewaard en bereikbaar.">You can no longer make quotes or previews until you enter a serial. Your data and the PDFs you have already made stay saved and accessible.</p></details>
+<details><summary><span data-nl="Hoe vraag ik een serial aan en activeer ik die?">How do I request and activate a serial?</span></summary><p data-nl="Open in de app &lt;i&gt;Instellingen → Licentie&lt;/i&gt; en kopieer het &lt;b&gt;Installatie-ID&lt;/b&gt;. Geef dat ID door bij je aanvraag. Je ontvangt een serial, die je in hetzelfde scherm plakt en activeert.">In the app open <i>Settings → Licence</i> and copy the <b>Installation ID</b>. Include it with your request. You receive a serial, which you paste into the same screen and activate.</p></details>
+<details><summary><span data-nl="Mag ik een serial op meerdere computers gebruiken?">Can I use one serial on several computers?</span></summary><p data-nl="Een serial wordt voor één installatie uitgegeven en werkt dan alleen op die computer. Voor een andere computer vraag je een nieuwe serial aan met het Installatie-ID van die computer.">A serial is issued for one installation and only works on that computer. For another computer, request a new serial with that computer's Installation ID.</p></details>
+</div>
+<h3 class="r"><span data-nl="Gegevens en veiligheid">Data and security</span></h3><div class="acc r">
+<details><summary><span data-nl="Waar staan mijn klantgegevens?">Where is my customer data stored?</span></summary><p data-nl="Alleen op je eigen computer, in één versleuteld bestand (&lt;code&gt;QuoteFlow.qf&lt;/code&gt;) in je offertemap. Er is geen account en geen cloud. De app stuurt geen klantgegevens naar internet. Voor updates vraagt hij alleen bij GitHub of er een nieuwere versie is.">Only on your own computer, in one encrypted file (<code>QuoteFlow.qf</code>) in your quotes folder. There is no account and no cloud. The app does not send customer data to the internet; for updates it only asks GitHub whether a newer version exists.</p></details>
+<details><summary><span data-nl="Ik ben mijn wachtwoord vergeten. Wat nu?">I forgot my password. Now what?</span></summary><p data-nl="Bij het instellen van je wachtwoord krijg je één keer een herstelsleutel te zien. Met die sleutel stel je op het inlogscherm een nieuw wachtwoord in via &lt;i&gt;Wachtwoord vergeten?&lt;/i&gt;. Zonder wachtwoord én herstelsleutel zijn de klantgegevens niet te herstellen. Bewaar de sleutel daarom veilig, buiten je computer.">When you set your password you see a recovery key once. With that key you set a new password on the sign-in screen via <i>Forgot password?</i>. Without both the password and the recovery key the customer data cannot be recovered, so keep the key somewhere safe, away from your computer.</p></details>
+<details><summary><span data-nl="Zijn de PDF&#x27;s ook versleuteld?">Are the PDFs encrypted too?</span></summary><p data-nl="Nee. De offerte-PDF&#x27;s moet je kunnen versturen en openen, dus die staan gewoon in de map van de offerte. Zet daarom schijfversleuteling aan op je computer (FileVault op de Mac, BitLocker op Windows).">No. Quote PDFs have to be sent and opened, so they are stored normally in the quote's folder. Turn on disk encryption on your computer (FileVault on Mac, BitLocker on Windows).</p></details>
+<details><summary><span data-nl="Waarom waarschuwt mijn computer bij het installeren?">Why does my computer show a warning when installing?</span></summary><p data-nl="QuoteFlow is niet ondertekend door Apple of Microsoft, daarom tonen macOS en Windows bij het eerste gebruik een waarschuwing. Download de app alleen van deze pagina of van de releases-pagina en volg de installatiestappen hierboven.">QuoteFlow is not signed by Apple or Microsoft, so macOS and Windows show a warning the first time. Only download the app from this page or from the releases page, and follow the installation steps above.</p></details>
+</div>
+<h3 class="r"><span data-nl="Gebruik">Using QuoteFlow</span></h3><div class="acc r">
+<details><summary><span data-nl="Hoe verstuur ik een offerte?">How do I send a quote?</span></summary><p data-nl="Na het maken kun je de e-mail openen met ontvanger, onderwerp en tekst alvast ingevuld. Dat kan via Outlook op het web of via je standaard e-mailprogramma. De PDF voeg je zelf toe door hem uit de geopende map in de e-mail te slepen.">After creating it you can open the email with recipient, subject and text filled in, through Outlook on the web or your default mail app. You add the PDF yourself by dragging it from the opened folder into the email.</p></details>
+<details><summary><span data-nl="Kan ik mijn eigen logo, kleuren en teksten gebruiken?">Can I use my own logo, colours and texts?</span></summary><p data-nl="Ja. QuoteFlow wordt blanco geleverd. Onder &lt;i&gt;Instellingen → Profiel en sjabloon&lt;/i&gt; stel je je huisstijl in (kleuren, achtergrond, logo, logostrook) en pas je alle teksten aan. Je kunt dit als profiel exporteren en op een andere installatie importeren, zonder klantgegevens.">Yes. QuoteFlow ships blank. Under <i>Settings → Profile and template</i> you set your branding (colours, background, logo, logo strip) and edit all texts. You can export this as a profile and import it on another installation, without customer data.</p></details>
+<details><summary><span data-nl="Hoe werkt de nummering van offertes?">How does quote numbering work?</span></summary><p data-nl="Het offertenummer bestaat uit een prefix die je zelf instelt, een locatiecode en een volgnummer. Het volgnummer telt automatisch door. Op een nieuwe computer gaat het verder bij het hoogste nummer dat in je offertemap staat.">A quote number consists of a prefix you set, a location code and a sequence number. The sequence number counts up automatically. On a new computer it continues from the highest number found in your quotes folder.</p></details>
+<details><summary><span data-nl="Wat is de Reclameland-plug-in?">What is the Reclameland plug-in?</span></summary><p data-nl="Een optionele knop voor je browser waarmee je een product dat je op reclameland.nl hebt samengesteld met één klik in je offerte zet. De plug-in staat standaard uit en je hoeft hem niet te installeren.">An optional browser button that puts a product you configured on reclameland.nl into your quote with one click. It is off by default and you do not have to install it.</p></details>
+</div>
+<h3 class="r"><span data-nl="Installeren en updaten">Installing and updating</span></h3><div class="acc r">
+<details><summary><span data-nl="Hoe verhuis ik naar een nieuwe computer?">How do I move to a new computer?</span></summary><p data-nl="Installeer QuoteFlow, kies op het startscherm &lt;i&gt;Andere map…&lt;/i&gt; en wijs je oude offertemap aan. Na het invoeren van je wachtwoord zijn je klanten, instellingen en offertes er weer. Vraag voor de nieuwe computer een nieuwe serial aan als je serial aan de oude installatie is gebonden.">Install QuoteFlow, choose <i>Other folder…</i> on the start screen and select your old quotes folder. After entering your password your customers, settings and quotes are back. Request a new serial for the new computer if your serial is bound to the old installation.</p></details>
+<details><summary><span data-nl="Hoe update ik naar een nieuwe versie?">How do I update to a new version?</span></summary><p data-nl="De app meldt zelf dat er een nieuwe versie is (je kunt ook handmatig controleren onder &lt;i&gt;Instellingen → Updates&lt;/i&gt;). Op Windows start de installer, op de Mac sleep je de nieuwe app naar Programma&#x27;s en kies je &lt;i&gt;Vervang&lt;/i&gt;. Je gegevens blijven behouden.">The app tells you when a new version is available (you can also check manually under <i>Settings → Updates</i>). On Windows the installer starts; on a Mac you drag the new app to Applications and choose <i>Replace</i>. Your data is kept.</p></details>
+</div>
+  </div>
 </section>
 
-<section id="nieuw-sectie" class="verberg">
-  <h2>Nieuw in <span id="nieuw-versie"></span></h2>
-  <pre id="nieuw"></pre>
+<section class="alt verberg" id="nieuw-sectie">
+  <div class="w"><div class="kop"><h2><span data-nl="Nieuw in">What’s new in</span> <span id="nieuw-versie"></span></h2></div><pre id="nieuw"></pre></div>
 </section>
 
 <footer>
-  <p>QuoteFlow · © 2026 Achim Pieters. Alle rechten voorbehouden. · <a href="https://github.com/AchimPieters/QuoteFlow-releases/releases">Alle versies</a></p>
+  <div class="w">
+    <p><span id="voet-dl"><span data-nl="Download alleen van deze pagina of van de releases-pagina.">Download only from this page or from the releases page.</span></span> <a href="https://github.com/AchimPieters/QuoteFlow-releases/releases"><span data-nl="Alle versies">All versions</span></a></p>
+    <hr>
+    <p>© 2026 Achim Pieters. <span data-nl="Alle rechten voorbehouden.">All rights reserved.</span> · QuoteFlow</p>
+  </div>
 </footer>
-</div>
+
 <script>
 (function () {
   var REPO = 'AchimPieters/QuoteFlow-releases';
-  var ua = navigator.userAgent || '';
-  var win = /Windows/i.test(ua), mac = /Macintosh|Mac OS X/i.test(ua);
-  // Het besturingssysteem van de bezoeker markeren (Apple Silicon of Intel is niet betrouwbaar te zien: bij Mac tonen we beide)
+  var DICT = {
+    en: { dlWin: 'Download for Windows', dlMac: 'Download for Mac', ver: 'Version {v} · {d}', mac: ' · Choose the version that fits your Mac below.', fail: 'Could not fetch the latest version; the buttons open the releases page.', loc: 'en-GB',
+          title: 'QuoteFlow – Quotes, made simple.', desc: 'QuoteFlow is a desktop app for macOS and Windows that turns a customer and a few products into a polished, fillable PDF quote. Free 7-day trial.', dl: 'Download' },
+    nl: { dlWin: 'Download voor Windows', dlMac: 'Download voor Mac', ver: 'Versie {v} · {d}', mac: ' · Kies hieronder de versie die bij jouw Mac past.', fail: 'Kon de nieuwste versie niet ophalen; de knoppen openen de releases-pagina.', loc: 'nl-NL',
+          title: 'QuoteFlow – Offertes, eenvoudig gemaakt.', desc: 'QuoteFlow is een desktop-app voor macOS en Windows die van een klant en een paar producten een verzorgde, invulbare PDF-offerte maakt. 7 dagen gratis proberen.', dl: 'Download' }
+  };
+  var lang = 'en', state = { v: null, d: null, ok: null };
+  var ua = navigator.userAgent || '', win = /Windows/i.test(ua), mac = /Macintosh|Mac OS X/i.test(ua);
+
+  // vertaalbare elementen: Engels staat in de HTML, Nederlands in data-nl
+  var els = [].slice.call(document.querySelectorAll('[data-nl]'));
+  els.forEach(function (e) { e.setAttribute('data-en', e.innerHTML); });
+  function zet(l) {
+    lang = l; var D = DICT[l];
+    els.forEach(function (e) { e.innerHTML = l === 'nl' ? e.getAttribute('data-nl') : e.getAttribute('data-en'); });
+    document.documentElement.lang = l; document.title = D.title;
+    document.querySelector('meta[name=description]').setAttribute('content', D.desc);
+    [].forEach.call(document.querySelectorAll('.taal button'), function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-l') === l ? 'true' : 'false'); });
+    knoppen(); regel();
+    try { localStorage.setItem('qf-lang', l); } catch (e) {}
+  }
+  [].forEach.call(document.querySelectorAll('.taal button'), function (b) { b.onclick = function () { zet(b.getAttribute('data-l')); }; });
+
+  // besturingssysteem markeren (Apple silicon of Intel is niet betrouwbaar te zien: bij Mac tonen we beide)
   if (win) { document.getElementById('k-win').classList.add('uit'); document.getElementById('d-win').open = true; }
   if (mac) { document.getElementById('k-arm').classList.add('uit'); document.getElementById('k-x64').classList.add('uit'); document.getElementById('d-mac').open = true; }
+  var A = {};
+  function knoppen() {
+    var h = document.getElementById('hoofdknop'), D = DICT[lang];
+    if (win && A.win) { h.href = A.win.browser_download_url; h.textContent = D.dlWin; }
+    else if (mac) { h.href = '#download'; h.textContent = D.dlMac; }
+    else { h.href = '#download'; h.textContent = D.dl; }
+  }
+  function regel() {
+    var D = DICT[lang], t = document.getElementById('versie');
+    if (state.ok === false) { t.textContent = D.fail; return; }
+    if (!state.v) return;
+    var d = state.d ? new Date(state.d).toLocaleDateString(D.loc, { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+    t.textContent = D.ver.replace('{v}', state.v).replace('{d}', d).replace(/ · $/, '') + (mac ? D.mac : '');
+  }
   var mb = function (n) { return (n / 1048576).toFixed(0) + ' MB'; };
   fetch('https://api.github.com/repos/' + REPO + '/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (j) {
-      var versie = String(j.tag_name || '').replace(/^v/i, '');
       var vind = function (re) { return (j.assets || []).filter(function (a) { return re.test(a.name); })[0]; };
-      var A = { win: vind(/win-x64\.exe$/i), arm: vind(/mac-arm64\.dmg$/i), x64: vind(/mac-x64\.dmg$/i) };
       var geldig = function (a) { return a && /^https:\/\/github\.com\/AchimPieters\/QuoteFlow-releases\//.test(a.browser_download_url); };
-      Object.keys(A).forEach(function (k) {
-        if (!geldig(A[k])) return;
-        document.querySelector('a.knop[data-k="' + k + '"]').href = A[k].browser_download_url;
-        document.querySelector('.grootte[data-k="' + k + '"]').textContent = mb(A[k].size);
+      var X = { win: vind(/win-x64\.exe$/i), arm: vind(/mac-arm64\.dmg$/i), x64: vind(/mac-x64\.dmg$/i) };
+      Object.keys(X).forEach(function (k) {
+        if (!geldig(X[k])) return; A[k] = X[k];
+        document.querySelector('a.knop[data-k="' + k + '"]').href = X[k].browser_download_url;
+        document.querySelector('.grootte[data-k="' + k + '"]').textContent = mb(X[k].size);
       });
-      var h = document.getElementById('hoofdknop');
-      if (win && geldig(A.win)) { h.href = A.win.browser_download_url; h.textContent = 'Download voor Windows'; }
-      else if (mac) { h.href = '#downloads'; h.textContent = 'Download voor Mac'; } // Apple Silicon of Intel kiest de bezoeker zelf
-      var d = j.published_at ? new Date(j.published_at).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
-      document.getElementById('versie').textContent = 'Versie ' + versie + (d ? ' · ' + d : '') + (mac ? ' · Kies hieronder de versie die bij jouw Mac past.' : '');
-      if (j.body) { document.getElementById('nieuw').textContent = j.body; document.getElementById('nieuw-versie').textContent = versie; document.getElementById('nieuw-sectie').classList.remove('verberg'); }
+      state.v = String(j.tag_name || '').replace(/^v/i, ''); state.d = j.published_at; state.ok = true;
+      if (j.body) { document.getElementById('nieuw').textContent = j.body; document.getElementById('nieuw-versie').textContent = state.v; document.getElementById('nieuw-sectie').classList.remove('verberg'); }
+      knoppen(); regel();
     })
-    .catch(function () { document.getElementById('versie').textContent = 'Kon de nieuwste versie niet ophalen; de knoppen openen de releases-pagina.'; });
+    .catch(function () { state.ok = false; regel(); });
+
+  // taal onthouden (standaard Engels)
+  var bewaard = null; try { bewaard = localStorage.getItem('qf-lang'); } catch (e) {}
+  var q = /[?&]lang=(nl|en)/.exec(location.search); if (q) bewaard = q[1];
+  zet(bewaard === 'nl' ? 'nl' : 'en'); knoppen();
+
+  // zacht verschijnen bij scrollen
+  var items = [].slice.call(document.querySelectorAll('.r'));
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('zicht'); io.unobserve(e.target); } }); }, { threshold: .12 });
+    items.forEach(function (e) { io.observe(e); });
+  } else items.forEach(function (e) { e.classList.add('zicht'); });
 })();
 </script>
 </body>
