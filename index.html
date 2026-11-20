@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
+<title>QuoteFlow – offertes maken als invulbare PDF</title>
+<meta name="description" content="QuoteFlow is een desktop-app voor macOS en Windows om snel offertes te maken en als invulbare PDF te versturen. Download de nieuwste versie.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6 58 20 32 34 6 20z' fill='%23f6b94a'/%3E%3Cpath d='M32 20 58 34 32 48 6 34z' fill='%23f29a2e' opacity='.9'/%3E%3Cpath d='M32 34 58 48 32 62 6 48z' fill='%23e8742a' opacity='.9'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#f6f7fa;--card:#fff;--ink:#000830;--muted:#5d6477;--line:#d9dce6;--acc:#e8742a;--acc-ink:#fff;--soft:#fdf0e6}
+@media (prefers-color-scheme:dark){:root{--bg:#10121a;--card:#181b27;--ink:#eef0f8;--muted:#9aa1b8;--line:#2f3447;--acc:#f08a40;--acc-ink:#1a1206;--soft:#2a2118}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header{padding:48px 0 8px}
+.merk{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px}
+.merk svg{width:36px;height:36px}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:24px 0 12px}
+.lead{font-size:18px;color:var(--muted);max-width:640px;margin:0 0 24px}
+.knop{display:inline-block;background:var(--acc);color:var(--acc-ink);border-radius:12px;padding:13px 22px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:16px}
+.knop:hover{filter:brightness(1.07)}.knop.sec{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.knop:focus-visible,a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.sub{color:var(--muted);font-size:14px;margin:10px 0 0}
+section{margin:44px 0}
+h2{font-size:24px;margin:0 0 14px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.kaart{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.kaart.uit{border-color:var(--acc);box-shadow:0 0 0 2px var(--soft)}
+.kaart h3{margin:0 0 4px;font-size:17px}.kaart p{margin:0 0 12px;color:var(--muted);font-size:14px}
+ul.lijst{padding-left:20px;margin:0}ul.lijst li{margin:6px 0}
+ol.stappen{padding-left:22px}ol.stappen li{margin:8px 0}
+.melding{background:var(--soft);border-left:4px solid var(--acc);border-radius:8px;padding:12px 16px;margin:16px 0}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0}
+summary{cursor:pointer;font-weight:600}
+code{background:var(--soft);border-radius:4px;padding:1px 6px;font-size:14px}
+pre#nieuw{white-space:pre-wrap;font:inherit;margin:0;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:14px}
+a{color:inherit}
+.verberg{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="merk"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 58 20 32 34 6 20z" fill="#f6b94a"/><path d="M32 20 58 34 32 48 6 34z" fill="#f29a2e" opacity=".9"/><path d="M32 34 58 48 32 62 6 48z" fill="#e8742a" opacity=".9"/></svg>QuoteFlow</div>
+  <h1>Offertes maken als invulbare PDF, snel en overzichtelijk</h1>
+  <p class="lead">Een desktop-app voor macOS en Windows. Vul de klant en de producten in, QuoteFlow maakt de offerte met barcode en huisstijl als invulbare PDF.</p>
+  <a class="knop" id="hoofdknop" href="https://github.com/AchimPieters/QuoteFlow-releases/releases/latest">Download QuoteFlow</a>
+  <p class="sub" id="versie">Nieuwste versie ophalen…</p>
+</header>
+
+<section id="downloads">
+  <h2>Downloaden</h2>
+  <div class="kaarten">
+    <div class="kaart" id="k-win"><h3>Windows</h3><p>Windows 10 en 11 (64-bit). <span class="grootte" data-k="win"></span></p><a class="knop" data-k="win" href="https://github.com/AchimPieters/QuoteFlow-releases/releases/latest">Windows-installer</a></div>
+    <div class="kaart" id="k-arm"><h3>macOS · Apple Silicon</h3><p>Macs met een M1-chip of nieuwer. <span class="grootte" data-k="arm"></span></p><a class="knop" data-k="arm" href="https://github.com/AchimPieters/QuoteFlow-releases/releases/latest">DMG voor Apple Silicon</a></div>
+    <div class="kaart" id="k-x64"><h3>macOS · Intel</h3><p>Macs met een Intel-processor. <span class="grootte" data-k="x64"></span></p><a class="knop" data-k="x64" href="https://github.com/AchimPieters/QuoteFlow-releases/releases/latest">DMG voor Intel</a></div>
+  </div>
+  <p class="sub">Weet je niet welke Mac je hebt? Kies in het Apple-menu <i>Over deze Mac</i>: bij "Chip" staat Apple M…, of bij "Processor" staat Intel.</p>
+  <div class="melding"><b>7 dagen gratis proberen.</b> Na de proefperiode heb je een serial nodig. Je vindt het Installatie-ID in de app onder <i>Instellingen → Licentie</i>.</div>
+</section>
+
+<section>
+  <h2>Wat kan het?</h2>
+  <ul class="lijst">
+    <li>Klanten opslaan en hergebruiken, offertenummers met eigen prefix en locatiecodes die automatisch doortellen.</li>
+    <li>Winstmarge per product, meerdere producten per offerte, bijlagen in een map per offerte.</li>
+    <li>Nederlands en Engels, met standaardteksten die je zelf aanpast.</li>
+    <li>Invulbare PDF met barcode, handtekeningveld en je eigen huisstijl (kleuren, logo, achtergrond).</li>
+    <li>Klantgegevens staan versleuteld op je eigen computer in één bestand, met een herstelsleutel als je het wachtwoord vergeet.</li>
+    <li>Profielen: exporteer je teksten, instellingen en huisstijl en importeer ze op een andere installatie.</li>
+    <li>Optioneel: een knop in je browser om een product van reclameland.nl over te nemen in je offerte.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Installeren</h2>
+  <details id="d-mac"><summary>macOS</summary>
+    <ol class="stappen">
+      <li>Open de gedownloade <code>.dmg</code> en sleep <b>QuoteFlow</b> naar <b>Programma's</b> (bij een update: kies <i>Vervang</i>).</li>
+      <li>Open QuoteFlow. macOS meldt dat de app niet geopend is: klik op <b>Gereed</b> (niet op "Verplaats naar prullenmand").</li>
+      <li>Ga naar <i>Systeeminstellingen → Privacy en beveiliging</i>, scroll naar <i>Beveiliging</i> en klik naast "QuoteFlow is geblokkeerd" op <b>Open toch</b>. Bevestig met Touch ID of je wachtwoord.</li>
+      <li>Stel bij de eerste start een wachtwoord in (minstens 10 tekens) en bewaar de herstelsleutel veilig.</li>
+    </ol>
+  </details>
+  <details id="d-win"><summary>Windows</summary>
+    <ol class="stappen">
+      <li>Klik met de rechtermuisknop op het gedownloade <code>.exe</code>-bestand, kies <i>Properties</i> en vink onderaan <b>Unblock</b> aan (als die optie er staat). Klik op <i>Apply</i>.</li>
+      <li>Dubbelklik op het bestand. Zie je <i>Windows protected your PC</i>? Klik op <b>More info</b> en dan op <b>Run anyway</b>.</li>
+      <li>Kies in het installatieprogramma <i>Only for me</i> (geen beheerder nodig) of <i>all users</i>, klik op <i>Next</i> en <i>Install</i>.</li>
+      <li>Stel bij de eerste start een wachtwoord in (minstens 10 tekens) en bewaar de herstelsleutel veilig.</li>
+    </ol>
+  </details>
+  <div class="melding"><b>Waarom een waarschuwing?</b> QuoteFlow is niet ondertekend door Apple of Microsoft, daarom waarschuwen macOS en Windows bij het eerste gebruik. Download alleen van deze pagina of van de <a href="https://github.com/AchimPieters/QuoteFlow-releases/releases">releases-pagina</a>.</div>
+</section>
+
+<section id="nieuw-sectie" class="verberg">
+  <h2>Nieuw in <span id="nieuw-versie"></span></h2>
+  <pre id="nieuw"></pre>
+</section>
+
+<footer>
+  <p>QuoteFlow · © 2026 Achim Pieters. Alle rechten voorbehouden. · <a href="https://github.com/AchimPieters/QuoteFlow-releases/releases">Alle versies</a></p>
+</footer>
+</div>
+<script>
+(function () {
+  var REPO = 'AchimPieters/QuoteFlow-releases';
+  var ua = navigator.userAgent || '';
+  var win = /Windows/i.test(ua), mac = /Macintosh|Mac OS X/i.test(ua);
+  // Het besturingssysteem van de bezoeker markeren (Apple Silicon of Intel is niet betrouwbaar te zien: bij Mac tonen we beide)
+  if (win) { document.getElementById('k-win').classList.add('uit'); document.getElementById('d-win').open = true; }
+  if (mac) { document.getElementById('k-arm').classList.add('uit'); document.getElementById('k-x64').classList.add('uit'); document.getElementById('d-mac').open = true; }
+  var mb = function (n) { return (n / 1048576).toFixed(0) + ' MB'; };
+  fetch('https://api.github.com/repos/' + REPO + '/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (j) {
+      var versie = String(j.tag_name || '').replace(/^v/i, '');
+      var vind = function (re) { return (j.assets || []).filter(function (a) { return re.test(a.name); })[0]; };
+      var A = { win: vind(/win-x64\.exe$/i), arm: vind(/mac-arm64\.dmg$/i), x64: vind(/mac-x64\.dmg$/i) };
+      var geldig = function (a) { return a && /^https:\/\/github\.com\/AchimPieters\/QuoteFlow-releases\//.test(a.browser_download_url); };
+      Object.keys(A).forEach(function (k) {
+        if (!geldig(A[k])) return;
+        document.querySelector('a.knop[data-k="' + k + '"]').href = A[k].browser_download_url;
+        document.querySelector('.grootte[data-k="' + k + '"]').textContent = mb(A[k].size);
+      });
+      var h = document.getElementById('hoofdknop');
+      if (win && geldig(A.win)) { h.href = A.win.browser_download_url; h.textContent = 'Download voor Windows'; }
+      else if (mac) { h.href = '#downloads'; h.textContent = 'Download voor Mac'; } // Apple Silicon of Intel kiest de bezoeker zelf
+      var d = j.published_at ? new Date(j.published_at).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+      document.getElementById('versie').textContent = 'Versie ' + versie + (d ? ' · ' + d : '') + (mac ? ' · Kies hieronder de versie die bij jouw Mac past.' : '');
+      if (j.body) { document.getElementById('nieuw').textContent = j.body; document.getElementById('nieuw-versie').textContent = versie; document.getElementById('nieuw-sectie').classList.remove('verberg'); }
+    })
+    .catch(function () { document.getElementById('versie').textContent = 'Kon de nieuwste versie niet ophalen; de knoppen openen de releases-pagina.'; });
+})();
+</script>
+</body>
+</html>
