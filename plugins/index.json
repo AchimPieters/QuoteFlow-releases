@@ -1,0 +1,11 @@
+{
+ "plugins": [
+  {
+   "id": "reclameland",
+   "naam": "Reclameland",
+   "versie": "1.0.1",
+   "beschrijving": "Producten van reclameland.nl met één klik overnemen in je offerte, via een knop in je browser.",
+   "bestand": "reclameland-1.0.1.qfp"
+  }
+ ]
+}
